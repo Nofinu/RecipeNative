@@ -5,7 +5,7 @@ import ButtonRecippe from './ButtonRecippe'
 
 export default function Homepage() {
   return (
-      <FlatList style={styles.container} numColumns={2} horizontal={false} data={CATEGORIES} renderItem={(itemData)=>{
+      <FlatList style={{height:"100%"}} numColumns={2} horizontal={false} data={CATEGORIES} renderItem={(itemData)=>{
         return <ButtonRecippe key={itemData.item.id} categorie={itemData.item}/>
       }} keyExtractor={item => item.id}></FlatList> 
   )
@@ -13,7 +13,7 @@ export default function Homepage() {
 
 const styles = StyleSheet.create({  
   container:{
-    flex:1
+    
 }
 })
 
