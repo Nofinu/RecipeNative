@@ -3,10 +3,8 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 export default function RecipeBox(props) {
-  console.log("log recipebox",props.imageUrl)
 
   const navigation = useNavigation()
-
 
   return (
     <Pressable style={styles.container} onPress={()=>navigation.navigate("Recipe",{titleRecipe:props.title})}>
