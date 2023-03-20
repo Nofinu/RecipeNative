@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image,ScrollView  } from 'react-native'
 import { useState, useEffect } from 'react';
 import React from 'react'
 import { MEALS } from '../data/data'
+import List from './List'
 
 export default function RecipeDisplayPage({navigation,route}) {
 
@@ -40,16 +41,12 @@ export default function RecipeDisplayPage({navigation,route}) {
           <View style={styles.listContainer}>
             <Text style={styles.titleContainer}>Ingredients :</Text>
             <View style={styles.hr}></View>
-            {
-              recipe.ingredients.map((ingredient,index) => <Text style={styles.textList} key={index}>{ingredient}</Text>)
-            }
+            <List data={recipe.ingredients}/>
           </View>
           <View style={styles.listContainer}>
             <Text style={styles.titleContainer}>Steps :</Text>
             <View style={styles.hr}></View>
-            {
-              recipe.steps.map((step,index) => <Text style={styles.textList} key={index}>{step}</Text>)
-            }
+            <List data={recipe.steps}/>
           </View>
         </>
       }
