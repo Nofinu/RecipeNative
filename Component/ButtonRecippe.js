@@ -9,18 +9,10 @@ export default function ButtonRecippe(props) {
   const {title,color,id}=props.categorie
   const colorbtn={backgroundColor:color}
 
-  const findMeal=()=>{
-    const mealFound = [...MEALS.filter(meal => meal.categoryIds.includes(id))]
-    return mealFound
-  }
 
-  const Send=()=>{
-    const meals = findMeal()
-    navigation.navigate("RecipePage",{meals:meals})
-  }
 
   return (
-      <TouchableHighlight style={[styles.btn,colorbtn]} onPress={Send}>
+      <TouchableHighlight style={[styles.btn,colorbtn]} onPress={()=>navigation.navigate("RecipePage",{id:id,title:title})}>
         <Text style={styles.text}>{title}</Text>
       </TouchableHighlight>
   )
