@@ -89,16 +89,6 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems:"center",
   },
-  textList:{
-    width:"80%",
-    textAlign:'center',
-    fontSize:16,
-    backgroundColor:"#b56f1b",
-    color:"white",
-    borderRadius:10,
-    paddingVertical:3,
-    marginTop:5,
-  },
   hr:{
     backgroundColor:"#b56f1b",
     height:1,
