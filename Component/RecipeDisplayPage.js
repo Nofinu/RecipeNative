@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   titleContainer:{
     fontSize:20,
-    color:"#FFB266"
+    color:"#b56f1b"
   },
   listContainer:{
     marginTop:25,
@@ -83,14 +83,14 @@ const styles = StyleSheet.create({
     width:"80%",
     textAlign:'center',
     fontSize:16,
-    backgroundColor:"#FFB266",
+    backgroundColor:"#b56f1b",
     color:"white",
     borderRadius:10,
     paddingVertical:3,
     marginTop:5,
   },
   hr:{
-    backgroundColor:"#FFB266",
+    backgroundColor:"#b56f1b",
     height:1,
     width:"90%"
   }

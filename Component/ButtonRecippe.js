@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text} from 'react-native'
+import { TouchableHighlight, StyleSheet, Text} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { MEALS } from '../data/data';
 
@@ -20,16 +20,16 @@ export default function ButtonRecippe(props) {
   }
 
   return (
-      <Pressable style={[styles.btn,colorbtn]} onPress={Send}>
+      <TouchableHighlight style={[styles.btn,colorbtn]} onPress={Send}>
         <Text style={styles.text}>{title}</Text>
-      </Pressable>
+      </TouchableHighlight>
   )
 }
 
 const styles = StyleSheet.create({
   btn:{
     flex:1,
-    height:200,
+    height:150,
     width:200,
     marginLeft:"5%",
     marginRight:"5%",
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     borderRadius:10,
   },
   text:{
-    color:"white"
+    color:"white",
+    fontSize:25
   }
 })
