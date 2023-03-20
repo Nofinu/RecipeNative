@@ -5,15 +5,17 @@ import ButtonRecippe from './ButtonRecippe'
 
 export default function Homepage() {
   return (
-      <FlatList style={{height:"100%"}} numColumns={2} horizontal={false} data={CATEGORIES} renderItem={(itemData)=>{
+    <View style={styles.container}>
+      <FlatList numColumns={2} horizontal={false} data={CATEGORIES} renderItem={(itemData)=>{
         return <ButtonRecippe key={itemData.item.id} categorie={itemData.item}/>
-      }} keyExtractor={item => item.id}></FlatList> 
+      }} keyExtractor={item => { return item.id}}></FlatList> 
+    </View>
   )
 }
 
 const styles = StyleSheet.create({  
   container:{
-    
+    flex:1,
 }
 })
 

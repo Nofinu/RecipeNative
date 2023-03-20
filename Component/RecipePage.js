@@ -5,11 +5,11 @@ import RecipeBox from './RecipeBox'
 export default function RecipePage({route}) {
 
   return (
-      <ScrollView contentContainerStyle={styles.container}>
-        {
-          route.params.meals.map(meal=><RecipeBox title={meal.title} imageUrl={meal.imageUrl}/>)
-        }
-      </ScrollView>
+    <View></View>
+        // {
+        //   route.params.meals.map(meal=><RecipeBox title={meal.title} imageUrl={meal.imageUrl}/>)
+        // }
+
   )
 }
 

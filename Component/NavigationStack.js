@@ -10,9 +10,9 @@ export default function NavigationStack() {
   const Stack = createNativeStackNavigator() 
   return (
     <Stack.Navigator>
-      <Stack.Screen name='home' component={Homepage} options={{headerShown : false}}/>
+      <Stack.Screen key={"c00"} name='home' component={Homepage} options={{headerShown : false}}/>
       {
-        CATEGORIES.map(categorie=> <Stack.Screen name={categorie.id} component={RecipePage} options={{title:categorie.title}}/>)
+        CATEGORIES.map(categorie=> <Stack.Screen key={categorie.id} name={categorie.id} component={RecipePage} options={{title:categorie.title}}/>)
       }
     </Stack.Navigator>
   )
