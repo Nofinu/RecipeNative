@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet} from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import RecipePage from './RecipePage'
 import Homepage from './Homepage'
-import { CATEGORIES } from '../data/data'
+import RecipeDisplayPage from './RecipeDisplayPage'
 
 export default function NavigationStack() {
 
@@ -11,9 +11,8 @@ export default function NavigationStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen key={"c00"} name='home' component={Homepage} options={{headerShown : false}}/>
-      {
-        CATEGORIES.map(categorie=> <Stack.Screen key={categorie.id} name={categorie.id} component={RecipePage} options={{title:categorie.title}}/>)
-      }
+      <Stack.Screen name={"RecipePage"} component={RecipePage} options={{title:"recipe Page"}}/>
+      <Stack.Screen name={"Recipe"} component={RecipeDisplayPage} options={{title:"About the meal "}}/>
     </Stack.Navigator>
   )
 }
