@@ -57,6 +57,19 @@ export default function RecipeDisplayPage({navigation,route}) {
   )
 }
 
+{/* <View style={styles.listContainer}>
+<SectionList aria-disabled={true} sections={
+  [{title:recipe.title,data:[{duration :recipe.duration,complexity: recipe.complexity,affordability:recipe.affordability}]},
+  {title:"Ingredients :",data:[...recipe.ingredients]},
+  {title:"Steps :",data:[...recipe.steps]}]}
+  renderItem={({item})=>{
+  return (<Text style={styles.textList}>{item}</Text>)}}
+  renderSectionHeader={({section}) => (
+    <Text style={styles.titleContainer}>{section.title}</Text>
+  )}
+  keyExtractor={item => `basicListEntry-${item}`}/>
+</View> */}
+
 const styles = StyleSheet.create({
   title:{
     textAlign:"center",

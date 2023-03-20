@@ -8,7 +8,7 @@ export default function Homepage() {
 
       <FlatList numColumns={2} horizontal={false} data={CATEGORIES} renderItem={(itemData)=>{
         return <ButtonRecippe key={itemData.item.id} categorie={itemData.item}/>
-      }} keyExtractor={item => { return item.id}}></FlatList> 
+      }} keyExtractor={item => { return item.id}}/>
 
   )
 }
