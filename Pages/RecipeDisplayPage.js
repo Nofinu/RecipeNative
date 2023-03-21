@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image,ScrollView, Pressable  } from 'react-native'
+import { StyleSheet, Text, View, Image,ScrollView, TouchableHighlight } from 'react-native'
 import { useState, useEffect } from 'react';
 import React from 'react'
 import { MEALS } from '../data/data'
@@ -14,9 +14,12 @@ export default function RecipeDisplayPage({navigation,route}) {
     setRecipe(recipeFound)
   }
 
+  if(recipe !=={}){
+    navigation.setOptions({title:route.params.titleRecipe,headerRight : ()=> <BtnFavori id={recipe.id}/>})
+  }
+
   useEffect(() => {
-    findRecipe()
-    navigation.setOptions({title:route.params.titleRecipe})
+      findRecipe()
   }, [])
   
   return (
@@ -37,9 +40,9 @@ export default function RecipeDisplayPage({navigation,route}) {
             {recipe.isVegetarian && <Text>Vegetarian</Text>}
             {recipe.isLactoseFree && <Text>Lactose Free</Text>}
           </View>
-          <View style={{alignItems:"center"}}>
+          {/* <View style={{alignItems:"center"}}>
             <BtnFavori id={recipe.id}/>
-          </View>
+          </View> */}
           <View style={styles.listContainer}>
             <Text style={styles.titleContainer}>Ingredients :</Text>
             <View style={styles.hr}></View>
@@ -55,6 +58,8 @@ export default function RecipeDisplayPage({navigation,route}) {
     </ScrollView>
   )
 }
+
+
 
 
 const styles = StyleSheet.create({
@@ -84,5 +89,16 @@ const styles = StyleSheet.create({
     height:1,
     width:"90%"
   },
+  favori:{
+    flexDirection:"row",
+    alignItems:"center", 
+  },
+  btnFavori:{
+    alignItems:"center",
+    marginTop:20,
+    width:"40%",
+    borderRadius:10,
+    paddingVertical:4,
+  }
 
 })

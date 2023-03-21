@@ -14,11 +14,13 @@ export default function Favori() {
   useEffect(()=>{
     console.log(fav)
     setMeals([])
+    let tmptab =[]
     MEALS.forEach(meal => {
       if(fav.includes(meal.id)){
-        setMeals([...Meals,meal])
+        tmptab.push(meal)
       }
     })
+    setMeals(tmptab)
   },[fav])
 
   return (

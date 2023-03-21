@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import NavigationStack from './Component/NavigationStack'
 import { Provider } from 'react-redux'
-import { store } from './store'
+import { store } from './Service/store'
 
 export default function App() {
 
