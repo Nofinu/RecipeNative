@@ -5,10 +5,12 @@ import { useNavigation } from '@react-navigation/native'
 export default function RecipeBox(props) {
 
   const navigation = useNavigation()
-
+  // const star = "https://icons.getbootstrap.com/assets/icons/star.svg"
+  // const starFill = "https://icons.getbootstrap.com/assets/icons/star-fill.svg"
   return (
     <Pressable style={styles.container} onPress={()=>navigation.navigate("Recipe",{titleRecipe:props.title})}>
       <View>
+        {/* <Image source={{uri:star}} style={styles.star}/> */}
         <Image source={{uri:props.imageUrl}} style={{height:200}} ></Image>
         <Text style={styles.text}>{props.title}</Text>
         <View style={styles.display}>
@@ -36,5 +38,11 @@ const styles = StyleSheet.create({
   display:{
     flexDirection:'row',
     justifyContent:"space-evenly"
-  }
+  },
+  // star:{
+  //   height:30,
+  //   position:"absolute",
+  //   top:"5%",
+  //   zIndex:1,
+  // }
 })

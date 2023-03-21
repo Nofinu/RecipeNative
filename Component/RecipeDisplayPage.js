@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, Image,ScrollView  } from 'react-native'
+import { StyleSheet, Text, View, Image,ScrollView, Pressable  } from 'react-native'
 import { useState, useEffect } from 'react';
 import React from 'react'
 import { MEALS } from '../data/data'
 import List from './List'
+import BtnFavori from './BtnFavori';
 
 export default function RecipeDisplayPage({navigation,route}) {
 
@@ -38,6 +39,9 @@ export default function RecipeDisplayPage({navigation,route}) {
             {recipe.isVegetarian && <Text>Vegetarian</Text>}
             {recipe.isLactoseFree && <Text>Lactose Free</Text>}
           </View>
+          <View style={{alignItems:"center"}}>
+            <BtnFavori/>
+          </View>
           <View style={styles.listContainer}>
             <Text style={styles.titleContainer}>Ingredients :</Text>
             <View style={styles.hr}></View>
@@ -54,18 +58,6 @@ export default function RecipeDisplayPage({navigation,route}) {
   )
 }
 
-{/* <View style={styles.listContainer}>
-<SectionList aria-disabled={true} sections={
-  [{title:recipe.title,data:[{duration :recipe.duration,complexity: recipe.complexity,affordability:recipe.affordability}]},
-  {title:"Ingredients :",data:[...recipe.ingredients]},
-  {title:"Steps :",data:[...recipe.steps]}]}
-  renderItem={({item})=>{
-  return (<Text style={styles.textList}>{item}</Text>)}}
-  renderSectionHeader={({section}) => (
-    <Text style={styles.titleContainer}>{section.title}</Text>
-  )}
-  keyExtractor={item => `basicListEntry-${item}`}/>
-</View> */}
 
 const styles = StyleSheet.create({
   title:{
@@ -93,5 +85,6 @@ const styles = StyleSheet.create({
     backgroundColor:"#b56f1b",
     height:1,
     width:"90%"
-  }
+  },
+
 })

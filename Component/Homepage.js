@@ -5,11 +5,9 @@ import ButtonRecippe from './ButtonRecippe'
 
 export default function Homepage() {
   return (
-
       <FlatList numColumns={2} horizontal={false} data={CATEGORIES} renderItem={(itemData)=>{
         return <ButtonRecippe key={itemData.item.id} categorie={itemData.item}/>
       }} keyExtractor={item => { return item.id}}/>
-
   )
 }
 
