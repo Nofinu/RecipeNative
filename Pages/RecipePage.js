@@ -1,7 +1,7 @@
 import { FlatList, SafeAreaView, StyleSheet} from 'react-native'
 import { useEffect,useState } from 'react';
 import React from 'react'
-import RecipeBox from './RecipeBox'
+import RecipeBox from '../Component/RecipeBox'
 import { MEALS } from '../data/data';
 
 export default function RecipePage({navigation,route}) {

@@ -2,14 +2,12 @@ import { StyleSheet, Text, View, Image,ScrollView, Pressable  } from 'react-nati
 import { useState, useEffect } from 'react';
 import React from 'react'
 import { MEALS } from '../data/data'
-import List from './List'
-import BtnFavori from './BtnFavori';
+import List from '../Component/List'
+import BtnFavori from '../Component/BtnFavori';
 
 export default function RecipeDisplayPage({navigation,route}) {
 
   const [recipe,setRecipe]=useState({})
-
-
 
   const findRecipe=()=>{
     const recipeFound = MEALS.find(meal => meal.title === route.params.titleRecipe)

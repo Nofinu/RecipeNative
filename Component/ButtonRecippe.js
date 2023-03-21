@@ -1,6 +1,5 @@
 import { TouchableHighlight, StyleSheet, Text} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import { MEALS } from '../data/data';
 
 export default function ButtonRecippe(props) {
 
@@ -12,7 +11,7 @@ export default function ButtonRecippe(props) {
 
 
   return (
-      <TouchableHighlight style={[styles.btn,colorbtn]} onPress={()=>navigation.navigate("RecipePage",{id:id,title:title})}>
+      <TouchableHighlight style={[styles.btn,colorbtn]} onPress={()=>navigation.navigate("RecipePage",{id:id,title:title})} underlayColor={"grey"} activeOpacity={0.9}>
         <Text style={styles.text}>{title}</Text>
       </TouchableHighlight>
   )

@@ -1,7 +1,7 @@
 import { StyleSheet, View , FlatList} from 'react-native'
 import React from 'react'
 import { CATEGORIES } from '../data/data'
-import ButtonRecippe from './ButtonRecippe'
+import ButtonRecippe from '../Component/ButtonRecippe'
 
 export default function Homepage() {
   return (
