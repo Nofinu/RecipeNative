@@ -5,12 +5,16 @@ import { UrlBase } from "../Service/FireBaseApiKey";
 export const FetchFavorite = createAsyncThunk(
   "Favorite/FetchFavorite",
   async ()=>{
-    console.log(UrlBase+"favorite")
-    const response = await axios.get(UrlBase+"favorite")
+    const response = await axios.get(UrlBase+"/-NR3_gaqaOgp5cE63Q8r.json")
+    return response.data.fav
+  }
+)
 
-    //console.log("log",response.data)
-
-    return tmpTab
+export const PatchFavorite = createAsyncThunk(
+  "Favorite/AddFavorite",
+  async(data,{getState})=>{
+    const fav = getState().favorit.favorite
+    axios.patch(UrlBase+"/-NR3_gaqaOgp5cE63Q8r.json",{fav:fav})
   }
 )
 
@@ -21,6 +25,7 @@ const FavoriteSlice = createSlice({
   },
   reducers:{
     setFavoriteAction(state,actions){
+      console.log(actions.payload)
       if(state.favorite.find(fav => fav === actions.payload.id) === undefined){
         state.favorite.push(actions.payload.id)
       }
@@ -28,6 +33,11 @@ const FavoriteSlice = createSlice({
     removeFavoriteAction(state,actions){
       state.favorite.splice(state.favorite.indexOf(actions.payload.id),1)
     }
+  },
+  extraReducers:(builder)=>{
+    builder.addCase(FetchFavorite.fulfilled,(state,action)=>{
+      state.favorite=action.payload
+    })
   }
 })
 

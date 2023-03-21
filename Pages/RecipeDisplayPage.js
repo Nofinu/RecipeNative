@@ -19,9 +19,10 @@ export default function RecipeDisplayPage({navigation,route}) {
   useEffect(() => {
       findRecipe()
       if(recipe !=={}){
+        console.log("recipedisplay...",recipe.id)
         navigation.setOptions({title:route.params.titleRecipe,headerRight : ()=> <BtnFavori id={recipe.id}/>})
       }
-  }, [])
+  }, [recipe])
   
   return (
     <ScrollView>

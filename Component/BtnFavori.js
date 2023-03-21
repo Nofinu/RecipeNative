@@ -1,7 +1,7 @@
 import { StyleSheet, View,TouchableHighlight,Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFavoriteAction, setFavoriteAction } from '../data/FavoriteSlice'
+import { PatchFavorite, removeFavoriteAction, setFavoriteAction } from '../data/FavoriteSlice'
 
 
 
@@ -16,9 +16,11 @@ export default function BtnFavori(props) {
   const AddFav=()=>{
     if(starStatus){
       dispatch(removeFavoriteAction({id:props.id}))
+      dispatch(PatchFavorite())
     }
     else{
       dispatch(setFavoriteAction({id:props.id}))
+      dispatch(PatchFavorite())
     }
     //console.log("route: ",props.id)
   }

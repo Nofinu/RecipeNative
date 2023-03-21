@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet} from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { useNavigation } from '@react-navigation/native'
@@ -7,8 +7,17 @@ import RecipePage from '../Pages/RecipePage.js'
 import RecipeDisplayPage from '../Pages/RecipeDisplayPage.js'
 import Favori from '../Pages/Favori.js'
 import Homepage from '../Pages/Homepage.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { FetchFavorite } from '../data/FavoriteSlice.js'
 
 export default function NavigationStack() {
+
+  const dispatch=useDispatch()
+
+  useEffect(()=>{
+    dispatch(FetchFavorite())
+  },[])
+
   const Drawer = createDrawerNavigator()
   return (
     <Drawer.Navigator screenOptions={{headerShown:false}}>
