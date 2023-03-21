@@ -1,5 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios'
+import { UrlBase } from "../Service/FireBaseApiKey";
 
+export const FetchFavorite = createAsyncThunk(
+  "Favorite/FetchFavorite",
+  async ()=>{
+    console.log(UrlBase+"favorite")
+    const response = await axios.get(UrlBase+"favorite")
+
+    //console.log("log",response.data)
+
+    return tmpTab
+  }
+)
 
 const FavoriteSlice = createSlice({
   name:"Favorite",

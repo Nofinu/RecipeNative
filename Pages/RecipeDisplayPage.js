@@ -14,12 +14,13 @@ export default function RecipeDisplayPage({navigation,route}) {
     setRecipe(recipeFound)
   }
 
-  if(recipe !=={}){
-    navigation.setOptions({title:route.params.titleRecipe,headerRight : ()=> <BtnFavori id={recipe.id}/>})
-  }
+
 
   useEffect(() => {
       findRecipe()
+      if(recipe !=={}){
+        navigation.setOptions({title:route.params.titleRecipe,headerRight : ()=> <BtnFavori id={recipe.id}/>})
+      }
   }, [])
   
   return (

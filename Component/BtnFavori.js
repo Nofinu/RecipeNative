@@ -26,8 +26,6 @@ export default function BtnFavori(props) {
   useEffect(()=>{
     if(fav !== undefined){
       if(fav.includes(props.id)){
-        console.log("fav",fav)
-        console.log("id",props.id)
         setStarStatus(true)
       }
       else{
