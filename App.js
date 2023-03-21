@@ -2,14 +2,18 @@ import { SafeAreaView, StyleSheet} from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import NavigationStack from './Component/NavigationStack'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <NavigationContainer>
-        <NavigationStack/>
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <NavigationStack/>
+        </NavigationContainer>
+      </Provider>
     </SafeAreaView>
 )
 }
@@ -20,3 +24,6 @@ const styles = StyleSheet.create({
     backgroundColor:"grey"
   }
 })
+
+
+//npm i react-redux @reduxjs/toolkit

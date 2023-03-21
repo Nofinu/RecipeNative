@@ -38,7 +38,7 @@ export default function RecipeDisplayPage({navigation,route}) {
             {recipe.isLactoseFree && <Text>Lactose Free</Text>}
           </View>
           <View style={{alignItems:"center"}}>
-            <BtnFavori/>
+            <BtnFavori id={recipe.id}/>
           </View>
           <View style={styles.listContainer}>
             <Text style={styles.titleContainer}>Ingredients :</Text>
