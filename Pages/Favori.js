@@ -7,8 +7,6 @@ import { useSelector } from 'react-redux/'
 
 export default function Favori() {
 
-  const navigation = useNavigation()
-
   const [Meals,setMeals]=useState([])
 
   const fav = useSelector(state => state.favorit.favorite)
